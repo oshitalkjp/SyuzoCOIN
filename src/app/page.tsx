@@ -222,7 +222,7 @@ export default function Home() {
   const t = translations[lang];
 
   const copyAddress = () => {
-    navigator.clipboard.writeText("0x44399999999999999999999HEAT");
+    navigator.clipboard.writeText("6AJi8vU6jdDKzccon4QS2TseARWUJHPHLitNMgyapump");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
