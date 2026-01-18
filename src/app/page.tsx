@@ -212,7 +212,7 @@ const translations = {
   }
 };
 
-const basePath = '/shizimi';
+const basePath = '/SyuzoCOIN';
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('ja');
