@@ -14,6 +14,7 @@ const translations = {
     buyNow: "購入する",
     chart: "チャート",
     marquee: "DON'T GIVE UP! 諦めるな！ SHIJIMI IS TRULL! しじみがトゥルル！ SHUZO COIN TO THE MOON! 月まで熱くなれ！ • ",
+    caAnnouncement: "🔥 21時 CA公開！ 🔥",
     whyTitle: "WHY SHUZO?",
     whyText1: "多くのコインは「終わり」があるからゼロになる。彼らは止まり、諦める。",
     whyText2: "SHUZO COINは絶対に諦めない。",
@@ -115,6 +116,7 @@ const translations = {
     buyNow: "BUY NOW",
     chart: "CHART",
     marquee: "DON'T GIVE UP! 諦めるな！ SHIJIMI IS TRULL! しじみがトゥルル！ SHUZO COIN TO THE MOON! 月まで熱くなれ！ • ",
+    caAnnouncement: "🔥 CA Release at 21:00 JST! 🔥",
     whyTitle: "WHY SHUZO?",
     whyText1: "Most coins go to zero because they finish. They stop. They give up.",
     whyText2: "SHUZO COIN NEVER GIVES UP.",
@@ -256,7 +258,15 @@ export default function Home() {
       {/* Header */}
       <header className="header">
         <h1 className="logo-text text-glow">SHUZO COIN</h1>
-        <div className="flex items-center gap-4">
+        <div className="header-right">
+          <div className="header-social">
+            <a href="https://x.com/syuzoshizimi" target="_blank" rel="noopener noreferrer" className="header-social-link" title="X (Twitter)">
+              𝕏
+            </a>
+            <a href="https://t.me/syuzoshizimitrill" target="_blank" rel="noopener noreferrer" className="header-social-link" title="Telegram">
+              ✈️
+            </a>
+          </div>
           <button onClick={toggleLang} className="btn-lang font-bold text-white border border-white px-3 py-1 rounded hover:bg-white/20 transition-colors">
             {lang === 'ja' ? 'EN' : 'JP'}
           </button>
@@ -268,30 +278,35 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="coin-wrapper">
-          <div className="spin-coin">
-            <Image
-              src={`${basePath}/assets/shuzo_coin_transparent.jpg`}
-              alt="Shuzo Coin"
-              fill
-              className="img-contain rounded-full"
-              priority
-            />
+        {/* Coin and Character - 縦並び（スマホ）/ 横並び（PC） */}
+        <div className="hero-content">
+          <div className="coin-wrapper">
+            <div className="spin-coin">
+              <Image
+                src={`${basePath}/assets/shuzo_coin_transparent.jpg`}
+                alt="Shuzo Coin"
+                fill
+                className="img-contain rounded-full"
+                priority
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Character Overlay */}
-        <div
-          className={`character-overlay ${isHovered ? 'shake-hard' : ''}`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <Image
-            src={`${basePath}/assets/character_v2.png`}
-            alt="Matsuoka Shuzo Parody"
-            fill
-            className="img-contain character-img"
-          />
+          {/* Character */}
+          <div
+            className={`character-container ${isHovered ? 'shake-hard' : ''}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div className="character-overlay">
+              <Image
+                src={`${basePath}/assets/character_v2.png`}
+                alt="Matsuoka Shuzo Parody"
+                fill
+                className="img-contain character-img"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Main Title Impact */}
@@ -302,6 +317,11 @@ export default function Home() {
           <p className="hero-subtitle text-glow mb-4">
             {t.heroSubtitle}
           </p>
+        </div>
+
+        {/* CA Announcement */}
+        <div className="ca-announcement">
+          {t.caAnnouncement}
         </div>
 
         {/* Random Floating Shijimi Background */}
@@ -345,6 +365,18 @@ export default function Home() {
           {t.marquee}{t.marquee}
         </div>
       </div>
+
+      {/* YouTube Video Section */}
+      <section className="video-section">
+        <div className="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/vc_UVpFayaw"
+            title="Shuzo Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </section>
 
       {/* About Section */}
       <section className="section about-section">
@@ -465,8 +497,8 @@ export default function Home() {
           {t.footerWealthy}<br />{t.footerHot}
         </p>
         <div className="social-links">
-          <a href="#" className="social-icon">🐦</a>
-          <a href="#" className="social-icon">✈️</a>
+          <a href="https://x.com/syuzoshizimi" target="_blank" rel="noopener noreferrer" className="social-icon">𝕏</a>
+          <a href="https://t.me/syuzoshizimitrill" target="_blank" rel="noopener noreferrer" className="social-icon">✈️</a>
         </div>
         <p className="footer-disclaimer">
           {t.footerDisclaimer}
