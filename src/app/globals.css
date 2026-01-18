@@ -108,7 +108,7 @@ a {
   top: 0;
   width: 100%;
   z-index: 50;
-  padding: 1rem;
+  padding: 0.5rem 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,8 +118,14 @@ a {
   box-sizing: border-box;
 }
 
+@media (min-width: 768px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+}
+
 .logo-text {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: bold;
   font-family: var(--font-yuji), serif;
   color: var(--neon-white);
@@ -128,7 +134,7 @@ a {
 
 @media (min-width: 768px) {
   .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -154,13 +160,21 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.2s;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .header-social-link {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
 }
 
 .header-social-link:hover {
@@ -173,12 +187,19 @@ a {
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid var(--fire-yellow);
   color: var(--fire-yellow);
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.2s;
+}
+
+@media (min-width: 768px) {
+  .btn-lang {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+  }
 }
 
 .btn-lang:hover {
@@ -249,14 +270,14 @@ a {
 
 .coin-wrapper {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 @media (min-width: 768px) {
   .coin-wrapper {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -306,19 +327,17 @@ a {
   }
 }
 
-/* Character - スマホでは縦並び */
+/* Character - スマホでは非表示 */
 .character-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin-top: 1rem;
+  display: none;
 }
 
 @media (min-width: 768px) {
   .character-container {
-    width: 400px;
-    height: 400px;
-    margin-top: 0;
+    display: block;
+    position: relative;
+    width: 350px;
+    height: 350px;
   }
 }
 
@@ -435,13 +454,20 @@ a {
   background: linear-gradient(45deg, var(--fire-red), var(--fire-orange));
   border: 2px solid white;
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 0.4rem 0.8rem;
   font-family: var(--font-yuji), serif;
-  font-size: 1.25rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: transform 0.1s;
   box-shadow: 0 0 20px rgba(255, 51, 0, 0.5);
   display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+  }
 }
 
 .btn-outline {
